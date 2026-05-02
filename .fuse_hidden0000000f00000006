@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+  <title>I Already Knew. I Bought It Anyway. | Mint Blog</title>
+  <style>
+    :root {
+      --paper: #fffdfa;
+      --ink: #121212;
+      --muted: #6a6a6a;
+      --rule: #e3dfd8;
+      --accent: #1f1f1f;
+      --body-width: 640px;
+      --wide-width: 960px;
+      --gutter: clamp(20px, 4vw, 44px);
+      --figure-width: min(calc(var(--body-width) * 1.5), calc(100vw - var(--gutter) * 2));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 0 var(--gutter);
+      position: sticky;
+      top: 0;
+      background: rgba(255, 253, 250, 0.78);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      z-index: 10;
+      box-shadow: 0 8px 30px rgba(18, 18, 18, 0.08);
+    }
+
+    .masthead-inner {
+      max-width: var(--wide-width);
+      margin: 0 auto;
+      position: relative;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .corner-logo {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .logo {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+      line-height: 1;
+      font-family: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta {
+      max-width: var(--body-width);
+      margin: 22px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .byline {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .dateline {
+      margin: 3px 0 0;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    main { padding: 32px var(--gutter) 80px; }
+
+    .article-shell {
+      max-width: var(--wide-width);
+      margin: 0 auto;
+    }
+
+    .hero {
+      border-top: 3px solid var(--ink);
+      padding-top: 28px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(2.25rem, 5vw, 4.5rem);
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .dek {
+      max-width: 760px;
+      margin: 18px auto 0;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      line-height: 1.45;
+      color: #333;
+    }
+
+    .story {
+      max-width: var(--body-width);
+      margin: 0 auto;
+    }
+
+    .story p {
+      margin: 0 0 1.35rem;
+      font-size: 1.18rem;
+      line-height: 1.8;
+    }
+
+    .story .lead { font-size: 1.25rem; }
+
+    .story h2 {
+      margin: 3rem 0 1rem;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .pull-end {
+      font-size: 1.45rem;
+      line-height: 1.55;
+      margin-top: 2rem;
+    }
+
+    figure {
+      margin: 38px auto;
+      max-width: var(--figure-width);
+    }
+
+    .body-figure {
+      width: var(--figure-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .body-figure.portrait {
+      width: calc(var(--figure-width) * 0.33);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .frame { margin: 0; background: #f3f0ea; }
+
+    .frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .references {
+      margin-top: 3rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .references h2 { margin-top: 0; }
+
+    .references p {
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+      padding-left: 2em;
+      text-indent: -2em;
+    }
+
+    .note {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --figure-width: calc(100vw - var(--gutter) * 2);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .story p {
+        font-size: 1.08rem;
+        line-height: 1.78;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <img class="corner-logo" src="assets/catunderleaf.png" alt="Mint Blog logo">
+      <p class="logo">MINT BLOG</p>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-shell">
+      <header class="hero">
+        <p class="kicker">Critical Reflection</p>
+        <h1>I Already Knew. I Bought It Anyway.</h1>
+        <p class="dek">A communication student looks at his own bills and finds the consumer critique only fits the cheapest parts of his life.</p>
+        <div class="hero-meta">
+          <p class="byline">By Zhang Jinghao</p>
+          <p class="dateline">May 2026 · COMS2000 — Critical Reflection</p>
+        </div>
+      </header>
+
+      <section class="story">
+        <p class="lead">I&rsquo;m a communication student, so I had nodded along to enough YouTube essays to know what consumer culture was doing to me. The critique is not news. And yet &mdash; this year I subscribed to Apple&rsquo;s Creative Studio and used only Final Cut. I bought a MacBook Air to build AI agents on; better tools live elsewhere now. I pay for things planned to be played and don&rsquo;t play most.</p>
+
+        <p>This isn&rsquo;t a before/after story. It&rsquo;s the after-after. I already knew. But I kept buying. The question is why the critique only covers part.</p>
+
+        <p>The pages below are organized by what I thought I was becoming when I paid &mdash; what Miles (2010) calls <em>shopping for dreams</em>. As a Student and Professional, I paid for competence. In Everyday Shopping, for rest. In Play and Escape, for time I don&rsquo;t have. (I swapped the template&rsquo;s <em>Tourism</em> because online, the real escape is a subscription.)</p>
+
+        <p>What links them is the consumer&rsquo;s critique covers what&rsquo;s cheapest on my bill, and what&rsquo;s cheapest in my conscience. The expensive lines &mdash; rent, electricity, the games top-ups I never regret &mdash; are the ones it can&rsquo;t reach. It works best on the McDonald&rsquo;s delivery fee from a McDonald&rsquo;s three minutes away.</p>
+      </section>
+
+      <section class="story">
+        <h2>I Bought the Tools. The Tools Worked. So Where Did the Relief Come From?</h2>
+
+        <p>The first time I subscribed to Apple&rsquo;s Creative Studio, I had a defensible reason. I&rsquo;d used Final Cut Pro before and knew it was good. Adobe was too expensive. ACS launched at $12 USD a month, about a third of Adobe. I thought &mdash; fine, I&rsquo;ll try it. The bill worked.</p>
+      </section>
+
+      <figure class="body-figure portrait">
+        <div class="frame"><img src="images/acs.png" alt="Apple Creative Studio subscription page showing $12 per month"></div>
+        <figcaption>ACS at US$12/month. The math made sense. Still does.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p>Final Cut still works very well. I edit video with it. The other apps I have not opened, but Final Cut alone is worth that $12.</p>
+
+        <p>So if the bill and math is fine and the use is real, what am I doing here?</p>
+
+        <p>The answer is in another purchase. Last term I bought a MacBook Air, my third Mac. The Air is planned and dedicated to running AI agents. The reasoning was real: I wanted agents that could replace tools, but ended up with companion-style ones; replacement-tier was harder. Because of extremely expensive API pricing, I run it three or four hours a day. But the agents really work.</p>
+      </section>
+
+      <figure class="body-figure portrait">
+        <div class="frame"><img src="images/3mac.jpeg" alt="Three Macs on a desk"></div>
+        <figcaption>Three Macs. The blue-shell Air runs the agents.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p>But the moment I received the Air from courier, I felt significantly more comfortable. Not lighter, is comforted. As if some background processing had been quietly downgraded.</p>
+
+        <p>That feeling didn&rsquo;t come from agents I hadn&rsquo;t built yet. It came from buying.</p>
+
+        <p>I notice the same about spending itself. I prefer one big purchase to a stream of small ones &mdash; bigger purchases hit harder at the moment of payment. Researchers have found that making a purchase, on its own, eases lingering sadness &mdash; the choice itself restores control (Rick, Pereira, &amp; Burson, 2014). Marketers knew this. I hadn&rsquo;t applied it to myself.</p>
+
+        <p>Gupta, Brooks, and Abrahams (2023) examine how students across three European countries reckon with &mdash; and often resist &mdash; being constructed as &ldquo;students-as-consumers.&rdquo; The literature treats this as how students relate to their degrees. I want to extend it: the construction doesn&rsquo;t stop at tuition. It runs through every tool I buy to be a student. The tool can be useful (Final Cut is). The buying can still be doing affective work the tool itself doesn&rsquo;t account for. Use doesn&rsquo;t quite absolve the purchase, even when the use is real.</p>
+
+        <p>The relief came before the agents was built. The thrill came at the moment of paying. The agents came along too &mdash; they just took a while.</p>
+
+        <h2>A Three-Minute Walk and a Delivery Fee</h2>
+
+        <p>Yesterday, with two essays there and a third staring at me, I chose to order McDonald&rsquo;s from a McDonald&rsquo;s three minutes&rsquo; walk away. Down a few floors, across one road. The delivery fee was small. I paid it without thinking, ate without leaving my desk, and went back to work.</p>
+      </section>
+
+      <figure class="body-figure portrait">
+        <div class="frame"><img src="images/map.png" alt="Google Maps showing the three-minute walking route"></div>
+        <figcaption>The route I paid not to take.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p>This is the kind of purchase consumer culture critique trains me to flag &mdash; convenience over effort, outsourcing a task I could do myself, letting an app pick it up. It makes the &ldquo;consumption I should feel slightly bad about&rdquo; list immediately.</p>
+      </section>
+
+      <figure class="body-figure portrait">
+        <div class="frame"><img src="images/mcdonalds.png" alt="McDonald's order receipt with delivery fee"></div>
+        <figcaption>The order. The fee covers a three-minute walk.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p>And then I opened my year-end bill.</p>
+
+        <p>The McDonald&rsquo;s fee is so far down the list I have to scroll. The biggest line, by an embarrassing margin, is rent. The next is the SP bill &mdash; Singapore&rsquo;s electricity, gas, water &mdash; up again this year. Then groceries, and the recurring transport top-up. None of these are choices in any meaningful sense. The course readings have nothing to say about an SP bill. The critique I picked up online has no position on rent. They have positions on the delivery fee.</p>
+      </section>
+
+      <figure class="body-figure">
+        <div class="frame"><img src="images/rent.png" alt="Alipay rent transfer screenshot"></div>
+        <figcaption>Rent moves itself out of my account every month.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p>de Solier (2013) writes that &ldquo;questions of morality are central to consumption,&rdquo; and that buying or refusing to buy is a key site of self-making (p. 108). Her empirical site is Australian foodies &mdash; moral choices at the level of artisanal over mass, slow over fast. I want to extend her sideways. When I look at my bill, the moral discourse I bring to consumption attaches almost only at that level &mdash; small, visible, chosen &mdash; and almost never to the structural conditions of what I pay. The thing I cannot opt out of pays for itself in silence. The thing I can opt out of, I get to feel bad about.</p>
+
+        <p>So <em>what&rsquo;s cheapest in my conscience</em> wasn&rsquo;t a clever line. The words I picked up this term land mostly on the cheap stuff. The expensive stuff goes uncovered.</p>
+
+        <h2>Over Two Thousand Games, One Subscription, One Banner</h2>
+
+        <p>I have 2,664 games on Steam. I have played, by my own count, maybe five hundred. I subscribe to Xbox Game Pass Ultimate and have not opened it since they raised the price. And at the end of last quarter I spent more than I want to write down on a single banner in <em>Wuthering Waves</em> &mdash; and I do not feel even slightly bad about it.</p>
+
+        <p>The critique I have been working with cuts through some of these cleanly, sideways through some, and almost not at all through the third. They are all &ldquo;play and escape&rdquo; purchases. They refuse to behave the same way under the same lens.</p>
+
+        <p><strong>Banner (no regret).</strong> The <em>Wuthering Waves</em> story I paid into was real. I cried, I pulled, and I paid, and I would do it again. The point, for me, was an emotional payoff. It arrived. Happiness, when I am honest about it, is mine to define. Not pulling would have meant leaving a character I&rsquo;d spent five hours grieving for behind a paywall I could afford. The &ldquo;consumer manipulation&rdquo; framing assumes I was tricked. I wasn&rsquo;t. The story made me want her. The pull let me have her. The math is not flattering, but the utility is real.</p>
+      </section>
+
+      <figure class="body-figure">
+        <div class="frame"><img src="images/wuwa.png" alt="Wuthering Waves character page"></div>
+        <figcaption>Yes, I maxed her all six nodes out. And no, I would never regret while often do it again.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p><strong>Library (collecting is the use).</strong> Steam is different. I don&rsquo;t pull for games on Steam &mdash; I accumulate them &mdash; sales, bundles, the occasional impulse &mdash; and the pile grows faster than I can open it. The 2,000-plus unopened games are not a moral failure. Williams (2020) studies theme park fans whose &ldquo;consuming, collecting and costuming&rdquo; of merchandise is itself the fan activity &mdash; not a means to some downstream use. A Steam library has the same shape. The list is the artifact. Selecting which game I&rsquo;d play if I had the time is itself the activity. The owning, for that genre of consumption, <em>is</em> the using.</p>
+      </section>
+
+      <figure class="body-figure">
+        <div class="frame"><img src="images/steam.png" alt="Steam library showing 2,664 games"></div>
+        <figcaption>2,664. By my own count, I have played maybe 500.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p><strong>Subscription (the critique fits cleanly).</strong> And then there is XGPU. I subscribed when it was cheaper. I have not opened it for months. Microsoft raised the price again, I noticed the email, I did not unsubscribe. Bardhi and Eckhardt (2017) describe a shift toward &ldquo;liquid consumption&rdquo; &mdash; ephemeral, access-based, and dematerialised &mdash; distinct from the &ldquo;solid&rdquo; mode built around ownership. XGPU is liquid in their sense; what I am paying for is the access itself, exercised at near-zero. Cancelling converts prior payments into &ldquo;wasted.&rdquo; Staying makes current payments &ldquo;wasted later.&rdquo; I am running the loss either way &mdash; by design.</p>
+      </section>
+
+      <figure class="body-figure">
+        <div class="frame"><img src="images/xgpu.png" alt="Xbox Game Pass Ultimate price increase email"></div>
+        <figcaption>The price went up. I read the email. But I didn&rsquo;t unsubscribe.</figcaption>
+      </figure>
+
+      <figure class="body-figure">
+        <div class="frame"><img src="images/info.png" alt="Same Critique, Three Verdicts infographic"></div>
+        <figcaption>The infographic with Figma MCP through my Agnet.</figcaption>
+      </figure>
+
+      <section class="story">
+        <p>So three modes, three verdicts: cleanly through XGPU, sideways through Steam, nearly missing the banner. (Williams catches more of Steam than the consumer studies critique does.) This is the actual problem the unit left me with. The critique is a ruler. It measures some things accurately, some on a slant, and some barely at all. Looking at a bill, the ruler doesn&rsquo;t tell you which is which. That part you have to do yourself.</p>
+
+        <h2>As I Was Writing This</h2>
+
+        <p class="pull-end">I would like to end on something tidier. I can&rsquo;t. I finished writing with the companion of the agent on the MacBook Air, and FCPX still installed in my major Mac, with more than two thousand unopened games on the Steam account I kept signed in. XGPU is still active because of upcoming <em>Forza Horizon 6</em> on 15 May. I knew the critique before this and I&rsquo;ll know it after. It will still cover only the parts of my life it can reach. The honest move is to say so, and stop hoping the writing fixes what it criticizes.</p>
+
+        <section class="references">
+          <h2>References</h2>
+          <p>Bardhi, F., &amp; Eckhardt, G. M. (2017). Liquid consumption. <em>Journal of Consumer Research</em>, <em>44</em>(3), 582&ndash;597. <a href="https://doi.org/10.1093/jcr/ucx050">https://doi.org/10.1093/jcr/ucx050</a></p>
+          <p>de Solier, I. (2013). Consuming things: Material cultures and moralities of consumption. In <em>Food and the self: Consumption, production and material culture</em> (pp. 108&ndash;146). Bloomsbury.</p>
+          <p>Gupta, A., Brooks, R., &amp; Abrahams, J. (2023). Higher education students as consumers: A cross-country comparative analysis of students&rsquo; views. <em>Compare: A Journal of Comparative and International Education</em>, <em>55</em>(2), 174&ndash;191. <a href="https://doi.org/10.1080/03057925.2023.2234283">https://doi.org/10.1080/03057925.2023.2234283</a></p>
+          <p>Miles, S. (2010). Shopping for dreams. In <em>Spaces for consumption</em> (pp. 98&ndash;118). SAGE.</p>
+          <p>Rick, S. I., Pereira, B., &amp; Burson, K. A. (2014). The benefits of retail therapy: Making purchase decisions reduces residual sadness. <em>Journal of Consumer Psychology</em>, <em>24</em>(3), 373&ndash;380. <a href="https://doi.org/10.1016/j.jcps.2013.12.004">https://doi.org/10.1016/j.jcps.2013.12.004</a></p>
+          <p>Williams, R. (2020). Embodied transmedia and paratextual-spatio play: Consuming, collecting and costuming theme park merchandise. In <em>Theme park fandom: Spatial transmedia, materiality and participatory cultures</em> (pp. 181&ndash;210). Amsterdam University Press. <a href="https://doi.org/10.5117/9789462982574_ch07">https://doi.org/10.5117/9789462982574_ch07</a></p>
+        </section>
+      </section>
+
+    </article>
+  </main>
+</body>
+</html>
