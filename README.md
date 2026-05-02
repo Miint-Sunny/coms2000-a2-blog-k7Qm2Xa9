@@ -6,7 +6,6 @@ Live site: (paste GitHub Pages URL here once deployed)
 ## Files
 - `index.html` — the article
 - `images/` — all body figures + the infographic
-- `assets/catunderleaf.png` — the MintTimes corner logo (copy from your old `minttimes-web-test` repo)
 
 ## Deploy on GitHub Pages
 1. Create a new public repo (e.g. `coms2000-blog` or whatever)
